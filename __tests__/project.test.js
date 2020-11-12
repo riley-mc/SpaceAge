@@ -13,7 +13,19 @@ describe('Date', () => {
   });
 
   test('should correctly recieves back the last two digits of the year getting the number to find the year code', () => {
-    expect(date.yearCode()).toEqual(87);
+    expect(date.twoDigitYear()).toEqual(87);
+  });
+
+  test('should return the full year code', () => {
+    expect(date.yearCode()).toEqual(3);
+  });
+
+  test('should return the month code for the given month', () => {
+    expect(date.monthCode()).toEqual(6);
+  });
+
+  test('should return the date with a G, or J, depending on the input year', () => {
+    expect(date.centuryCode()).toEqual("G");
   });
 
 });
