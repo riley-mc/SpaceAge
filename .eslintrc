@@ -13,5 +13,15 @@
   "rules": {
       "semi": 1,
       "indent": ["warn", 2]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "./__tests__/project.test.js"
+      ],
+      "env": {
+        "jest": true
+      }
+    }
+  ]
 }

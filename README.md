@@ -1,4 +1,4 @@
-# Pizza Parlor
+# Weekday Calculator
 
 #### _JavaScript, JQuery, For Loop and Array Week 4 Epicodus 11/6/2020_
 
