@@ -1,31 +1,44 @@
-import { Date } from "./../src/js/date.js";
+import { Date } from "../src/js/date.js";
 
 describe('Date', () => {
 
-  let date;
+  let Gdate;
+  let Jdate;
 
   beforeEach(() => {
-    date = new Date(20, 4, 1987);
+    Gdate = new Date(20, 4, 1987);
+    Jdate = new Date(20, 4, 1687);
   });
 
   test('should correctly construct a Date object with the correct Day, Month and Year', () => {
-    expect(date.day).toEqual(20);
+    expect(Gdate.day).toEqual(20);
   });
 
   test('should correctly recieves back the last two digits of the year getting the number to find the year code', () => {
-    expect(date.twoDigitYear()).toEqual(87);
+    expect(Gdate.twoDigitYear()).toEqual(87);
   });
 
   test('should return the full year code', () => {
-    expect(date.yearCode()).toEqual(3);
+    expect(Gdate.yearCode()).toEqual(3);
   });
 
   test('should return the month code for the given month', () => {
-    expect(date.monthCode()).toEqual(6);
+    expect(Gdate.monthCode()).toEqual(6);
   });
 
   test('should return the date with a G, or J, depending on the input year', () => {
-    expect(date.centuryCode()).toEqual("G");
+    expect(Gdate.calendar()).toEqual("G");
   });
 
+  test('should return the century code for a gregorian year', () => {
+    expect(Gdate.gregCenturyCode()).toEqual(0);
+  });
+
+  test('should return the century code for a julian year', () => {
+    expect(Jdate.julCenturyCode()).toEqual(2);
+  });
+
+  test('should return if the year is a leap year or not', ()  => {
+  expect(Gdate.toWeekday()).toEqaul()
+  }
 });

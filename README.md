@@ -1,25 +1,22 @@
-# Weekday Calculator
+# Space Age
 
-#### _JavaScript, JQuery, For Loop and Array Week 4 Epicodus 11/6/2020_
+#### _JavaScript, JQuery, For Loop and Array Week 4 Epicodus 11/13/2020_
 
 ## Description
-Create an app for calculating the day for any given date. The user should be able to enter in a date and see what day of the week that date occured on.
+A calculator that will determine your age per lunar year for each planet of the solar system.
 
 ## Specifications
 
 | Behavior | Input | Output |
 |------------------------|-----------------|---------------------|
-| The user inputs month, day and year and recieves back the day of the week | 4/10/2020 | Friday |
-| The user imputs numerical year and recieves back the last two digits of the year getting the number to find the year code | 1998 | 98 |
-| Using the last two year digits, compute the year code | 98 | 3 |
-| Taking the month, and returning the corresponding month code | 04 (April) | 6 | 
-| Determining whether the date is in the Gregorian or Julian Calendar | 04/10/1658 | Julian |
-| (For Gregorian Calendar) Determine the century code | 04/10/2020 | 6 |
-| (For Julian Calendar) Determine the century code | 04/10/1658 | 2 |
-| (For Gregorian Calendar) Determine if the year is/was a leap year | 2020 | *YES* |
-| (For Julian Calendar) Determine if the year is/was a leap year | 1640 | *YES* |
-| Compute all codes to find weekday code number | 04/10/2020 | 6 |
-| Change the weekday code number into the weekday name | 6 | Saturday |
+| The user will input their numerical age and will recieve back input age | 20 |  20 |
+| The application will divide user input by .24 to determine users age on Mercury and return | 20 | 83.3 |
+| The application will divide user input by .62 to determine users age on Venus and return | 20 | 32.2
+| The application will divide user input by 1.88 to determine users age on Mars and return | 20 | 10.6
+| The application will divide user input by 11.86 to determine users age on Jupiter and return | 20 | 1.68 |
+| Application will determine remaining life expectancy based on user input age per planet. Average human life will last 80 years. | 20 | 60 years remaining |
+| Application will recognize is user is age of life expectancy. | 80 | 0 years left. |
+| Application will determine how many years past life expectancy user inputs. | 85 | You are past the life expectancy! |
 
 ## Setup/Installation Requirements
 
@@ -29,11 +26,11 @@ _To view my live website, visit [https://github.com/riley-mc/codereview4](https:
 
 ### Open Locally
 
-_Go to my GitHub repository here, {{[https://github.com/riley-mc/codereview4](https://github.com/riley-mc/codereview4),}} and click on the green 'Code' button to clone the repository, Open with GitHub Desktop OR Download the ZIP file_
+_Go to my GitHub repository here, {{[https://github.com/riley-mc/codereview5](https://github.com/riley-mc/codereview5),}} and click on the green 'Code' button to clone the repository, Open with GitHub Desktop OR Download the ZIP file_
 
 ##### To Clone:
 1. _Push the green 'Clone' button and copy the URL._
-2. _Open Terminal or GitBash and input the command:_ `git clone {{https://github.com/riley-mc/codereview4`}}
+2. _Open Terminal or GitBash and input the command:_ `git clone {{https://github.com/riley-mc/codereview5`}}
 3. _To view the code, open the copied directory with VSS by inputing the command `code .` in your terminal._
 4. _To view the website, open index.html in Chrome or your preferred browser._
 

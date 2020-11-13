@@ -35,7 +35,7 @@ Date.prototype.monthCode = function() {
   }
 }
 
-Date.prototype.centuryCode = function() {
+Date.prototype.calendar = function() {
   if (this.year > 1752){
     return "G";
   } else if (this.year < 1752) {
@@ -56,3 +56,79 @@ Date.prototype.centuryCode = function() {
     }
   }
 }
+
+Date.prototype.gregCenturyCode = function() {
+  let y = this.year;
+
+  if (y >= 1700 && y <= 1799) {
+    return 4;
+  } else if (y >= 1800 && y <= 1899) {
+    return 2;
+  } else if (y >= 1900 && y <= 1999) {
+    return 0;
+  } else if (y >= 2000 && y <= 2099) {
+    return 6;
+  } else if (y >= 2100 && y <= 2199) {
+    return 4;
+  } else if (y >= 2200 && y <= 2299) {
+    return 2;
+  } else if (y >= 2300 && y <= 2399) {
+    return 0;
+  } else {
+    return "the date is too far in the future....";
+  }
+}
+
+Date.prototype.julCenturyCode = function() {
+  let year = Math.trunc(this.year / 100);
+  year -= 18;
+  return Math.abs(year % 7);
+}
+
+Date.prototype.gregLeapYear = function() {
+  if (this.year % 400 === 0) {
+    return 1;
+  } else if (this.year % 100 === 0) {
+    return 0;
+  } else if (this.year % 4 === 0) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+Date.prototype.julLeapYear = function() {
+  if (this.year % 4 === 0) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+Date.prototype.calculate = function() {
+  if (this.calendar() === "G") {
+    let dayCode = (this.yearCode() + this.monthCode() + this.gregCenturyCode + this.day - this.gregLeapYear());
+    return dayCode;
+  } else if (this.calendar() === "J") {
+    let dayCode = (this.yearCode() + this.monthCode() + this.julCenturyCode + this.day - this.julLeapYear());
+    return dayCode;
+  }
+}
+
+Date.prototype.toWeekday = function() {
+  if (this.calculate() === 0) {
+    return "Sunday";
+  } else if (this.calculate() === 1)  {
+    return "Monday";
+  } else if (this.calculate() === 2)  {
+    return "Tuesday";
+  } else if (this.calculate() === 3)  {
+    return "Wednesday";
+  } else if (this.calculate() === 4)  {
+    return "Thursday";
+  } else if (this.calculate() === 5)  {
+    return "Friday";
+  } else if (this.calculate() === 6)  {
+    return "Saturday";
+  }
+};
